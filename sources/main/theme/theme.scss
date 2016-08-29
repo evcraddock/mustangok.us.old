@@ -1,0 +1,17 @@
+/*
+ * Global application theme.
+ * Framework overrides and customization goes here.
+ */
+
+  // UI Bootstrap fix (see https://angular-ui.github.io/bootstrap)
+.nav, .pagination, .carousel, .panel-title a {
+  cursor: pointer;
+}
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+footer {
+    margin: 50px 0;
+}

@@ -1,0 +1,11 @@
+{
+  "generator-angular-pro": {
+    "version": "2.1.0-beta.2",
+    "props": {
+      "appName": "mustangok.us",
+      "target": "both",
+      "ui": "bootstrap",
+      "projectName": "mustangok-us"
+    }
+  }
+}

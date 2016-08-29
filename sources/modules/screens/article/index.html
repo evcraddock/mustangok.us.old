@@ -1,0 +1,28 @@
+<section id="permalink-screen" class="permalink-screen">
+  <div class="row">
+
+      <!-- Blog Entries Column -->
+      <div class="col-md-8">
+          <div style="width:690px;">
+            <h2>
+                {{vm.article.title}}
+            </h2>             
+            <span ng-if="vm.article.banner != ''"><img class="img-responsive center-block" style="width:690px; height:389px;" ng-src="{{ vm.article.banner }}" alt=""></span>
+              <span class="pull-right"><span class="glyphicon glyphicon-time"></span> Posted on <span ng-bind="vm.article.publishDate | date:'MM/dd/yyyy'"></span></span>
+            <span>
+                by {{vm.article.author}}
+            </span> <br/><br/>
+            <span ng-repeat="cat in vm.article.categories">
+              <a href="/#/{{ cat }}/articles"><i class="label label-default">{{ cat }}</i></a>
+            </span>
+            <hr>
+            <p marked="vm.article.content"></p>   
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div ng-bind-html="vm.sideHeader"></div>
+          <div ng-include=" 'modules/ui-components/sidebar/sidebar.html' "></div>
+      </div>
+
+  </div>
+</section>

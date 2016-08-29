@@ -1,0 +1,88 @@
+<section id="shell" class="shell">
+
+  <header>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" ui-sref="app.home">
+                      <span translate>APP_NAME</span>
+                    </a>
+                </div>
+                <div class="navbar-collapse" uib-collapse="shell.menuHidden">
+                  <ul class="nav navbar-nav">
+                    
+                    <li class="dropdown" uib-dropdown>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" uib-dropdown-toggle>School <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <h4>Mustang High School</h4>
+                          </li>
+                          <li>
+                            <a class="nav-item" href="/#/highschool/articles">
+                              <span>Mustang Highschool News</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a class="nav-item" ui-sref="app.twentytwenty">
+                              <span>Class of 2020 - Freshman</span>
+                            </a>
+                          </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown" uib-dropdown>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" uib-dropdown-toggle>Sports Associations <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <h4>Mustang Youth Soccer Association</h4>
+                          </li>
+                          <li>
+                            <a class="nav-item" ui-sref="app.mysacolts">
+                              <span>MYSA Colts</span>
+                            </a>
+                          </li>
+                        </ul>
+                    </li>
+                     <!--  <li ng-class="{ active: shell.stateContains('app.about') }">
+                        <a class="nav-item" ui-sref="app.about">
+                          <span translate>About</span>
+                        </a>
+                      </li> -->
+                  </ul>
+                  <div class="navbar-form navbar-right">
+                    <!-- <div class="form-group" uib-dropdown>
+                      <button type="button" class="btn btn-default" uib-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+                        {{shell.currentLocale.id}} <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li ng-repeat="language in ::shell.languages">
+                          <a href="" ng-click="setLanguage(language)">{{language}}</a>
+                        </li>
+                      </ul>
+                    </div> -->
+                  </div>
+            </div>
+        </nav>
+  </header>
+
+  <div class="container">
+  <!-- View content -->
+    <div ui-view></div>
+
+  <footer>
+      <div class="row">
+          <div class="col-lg-12">
+              <p>Copyright &copy; <span translate>APP_NAME</span> 2016</p>
+          </div>
+          <!-- /.col-lg-12 -->
+      </div>
+      <!-- /.row -->
+  </footer>
+  </div>
+</section>

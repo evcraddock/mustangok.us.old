@@ -1,0 +1,21 @@
+<div ng-repeat="article in vm.articles">
+  <div class="media">  
+    <div class="media-left">
+      <a href="#{{ article.url }}">
+        <img class="media-object" style="width:150px;" ng-src="{{ article.banner }}" alt="">
+      </a>
+    </div>
+    <div class="media-body info">
+      <h3 class="media-heading"><a href="#{{ article.url }}">{{ article.title }}</a></h3>
+      <span ng-repeat="cat in article.categories">
+        <a href="/#/{{ cat }}/articles"><i class="label label-default">{{ cat }}</i></a>
+      </span>
+      <p marked="article.overview"></p>   
+      <span>
+          by {{article.author}}
+      </span> |  
+      <span class="glyphicon glyphicon-time"></span> Posted on <span ng-bind="article.publishDate | date:'MM/dd/yyyy'"></span>
+    </div>
+    <hr/>
+  </div>
+</div>
