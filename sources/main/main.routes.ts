@@ -39,6 +39,12 @@ module app {
         controller: 'twentytwentyController as vm',
         data: {title: 'Class of 2020', sectionTitle: 'Mustang High School'}
       })
+      .state('app.twentytwentycalendar', {
+        url: '/classof2020/calendar',
+        templateUrl: 'modules/screens/classof2020/calendar.html',
+        controller: 'twentytwentycalendarController as vm',
+        data: {title: 'Class of 2020 Calendar', sectionTitle: 'Mustang High School'}
+      })
       .state('app.mysacolts', {
         url: '/mysacolts',
         templateUrl: 'modules/screens/mysacolts/index.html',

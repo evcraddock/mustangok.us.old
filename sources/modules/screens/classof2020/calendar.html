@@ -1,0 +1,33 @@
+<section id="twentytwentycal-screen" class="twentytwentycal-screen">
+  <div class="row">
+      <!-- Blog Entries Column -->
+      <div class="col-md-8">
+        <h1>Mustang High School - Class of 2020</h1>
+        <hr/>
+        <div style="width:690px;">
+           <h2>
+               Calendar
+           </h2>
+           
+           <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=caradoc.com_1rrsvq42ef6h7gi9hh1aacvsvs%40group.calendar.google.com&amp;color=%23B1440E&amp;ctz=America%2FChicago" style="border-width:0" width="700" height="600" frameborder="0" scrolling="no"></iframe>
+
+           <a href="https://calendar.google.com/calendar/ical/caradoc.com_1rrsvq42ef6h7gi9hh1aacvsvs%40group.calendar.google.com/public/basic.ics">Subscribe to this calendar</a>
+        </div>
+
+        <hr/>
+        <div ng-include=" 'modules/screens/articlelist/list.html' "></div>
+      </div>
+
+
+
+      <!-- Blog Sidebar Widgets Column -->
+      <div class="col-md-4">
+        <div ng-bind-html="vm.sideHeader"></div>
+        <div ng-include=" 'modules/ui-components/sidebar/sidebar.html' "></div>
+      </div>
+
+  </div>
+
+<div ui-loading="vm.isLoading"></div>
+
+</section>

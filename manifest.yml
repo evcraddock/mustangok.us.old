@@ -1,0 +1,6 @@
+---
+applications:
+- name: mustangok-web
+  memory: 64MB
+  instances: 1
+  command: node ./www
