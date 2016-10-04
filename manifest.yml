@@ -1,6 +1,7 @@
 ---
 applications:
-- name: mustangok-web
+- name: mustangok.us
   memory: 64MB
   instances: 1
-  command: node ./www
+buildpack: https://github.com/cloudfoundry/staticfile-buildpack
+path: ./www/
