@@ -10,6 +10,7 @@ module app {
 
   export interface IApplicationEnvironment {
     debug: boolean;
+    articleDirectory: string;
     server: IServerConfig;
   }
 
@@ -19,15 +20,16 @@ module app {
   let environment = {
     local: {
       debug: true,
-
+      articleDirectory: 'articles/',
       // REST backend configuration, used for all web services using restService
       server: {
         url: '',
-        route: 'api'
+        route: 'http://localhost:9000'
       }
     },
     production: {
       debug: false,
+      articleDirectory: 'articles/',
       server: {
         url: 'http://mustangok.us',
         route: ''
@@ -47,7 +49,6 @@ module app {
     version: 'dev',
     environment: environment.local,
     // endreplace
-
     // Supported languages
     supportedLanguages: [
       'en-US',

@@ -2,19 +2,12 @@ module app {
 
   'use strict';
 
-  /**
-   * Configures the application routes.
-   */
   function routeConfig($stateProvider: angular.ui.IStateProvider,
                        $urlRouterProvider: angular.ui.IUrlRouterProvider,
                        $locationProvider: ng.ILocationProvider,
                        gettext: angular.gettext.gettextFunction) {
 
-    // Routes configuration
-    //$locationProvider.html5Mode(true);
-    
     $urlRouterProvider.otherwise('/');
-
 
     $stateProvider
       .state('app', {
@@ -66,8 +59,6 @@ module app {
         templateUrl: 'modules/screens/article/index.html',
         controller: 'articleController as vm'
       });
-
-
   }
 
   angular

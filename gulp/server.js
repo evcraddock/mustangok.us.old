@@ -21,18 +21,18 @@ function browserSyncInit(baseDir, browser, done) {
     middleware: []
   };
 
-  var agent = conf.corporateProxyAgent();
+  // var agent = conf.corporateProxyAgent();
 
-  // We activate a server proxy if we found a configuration for it.
-  conf.backendProxy.forEach(function(proxyRoute) {
-    var options = proxyRoute.options;
+  // // We activate a server proxy if we found a configuration for it.
+  // conf.backendProxy.forEach(function(proxyRoute) {
+  //   var options = proxyRoute.options;
 
-    if (agent) {
-      options.agent = agent;
-    }
+  //   if (agent) {
+  //     options.agent = agent;
+  //   }
 
-    server.middleware.push(proxyMiddleware(proxyRoute.context, options));
-  });
+  //   server.middleware.push(proxyMiddleware(proxyRoute.context, options));
+  // });
 
   browserSync.instance = browserSync.init({
     startPath: '/',

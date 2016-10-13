@@ -14,9 +14,6 @@ module app {
     public author: string,
     public categories: string[],
     public tags: string[]
-    ) {
-
-
-    }
+    ) {}
   }
 }

@@ -9,7 +9,7 @@ var path = require('path');
 var gutil = require('gulp-util');
 var fs = require('fs');
 var bower = JSON.parse(fs.readFileSync('.bowerrc', 'utf8'));
-var HttpsProxyAgent = require('https-proxy-agent');
+//var HttpsProxyAgent = require('https-proxy-agent');
 
 /**
  * The main paths of your project, handle these with care.
@@ -46,16 +46,16 @@ exports.defaultBuildEnvironment = 'production';
  *
  * For more details and option, see https://github.com/chimurai/http-proxy-middleware/
  */
-exports.backendProxy = [
-  {
-    context: '/api',
-    options: {
-      pathRewrite: {'^/api': ''},
-      target: 'http://api.icndb.com',
-      changeOrigin: true
-    }
-  }
-];
+// exports.backendProxy = [
+//   {
+//     context: 'api',
+//     options: {
+//       pathRewrite: {'^/api': '/'},
+//       target: 'http://localhost:9000',
+//       changeOrigin: true
+//     }
+//   }
+// ];
 
 /**
  * Wiredep is the lib which inject bower dependencies in your project.
@@ -71,17 +71,17 @@ exports.wiredep = {
 /**
  * Configures a corporate proxy agent for the API proxy.
  */
-exports.corporateProxyAgent = function() {
-  var agent = null;
-  var proxyServer = process.env.http_proxy || process.env.HTTP_PROXY;
+// exports.corporateProxyAgent = function() {
+//   var agent = null;
+//   var proxyServer = process.env.http_proxy || process.env.HTTP_PROXY;
 
-  if (proxyServer) {
-    agent = new HttpsProxyAgent(proxyServer);
-    gutil.log(gutil.colors.cyan('Using corporate proxy server: ' + proxyServer));
-  }
+//   if (proxyServer) {
+//     agent = new HttpsProxyAgent(proxyServer);
+//     gutil.log(gutil.colors.cyan('Using corporate proxy server: ' + proxyServer));
+//   }
 
-  return agent;
-};
+//   return agent;
+// };
 
 /**
  * Common implementation for an error handler of a gulp plugin.
