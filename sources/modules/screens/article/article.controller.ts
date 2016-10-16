@@ -9,6 +9,7 @@ module app {
     isLoading: boolean = true;
     article: Article;
     links: Link[] = [];
+    category: string;
 
   	private logger: ILogger;
     private articleService: ArticleService;
@@ -36,7 +37,11 @@ module app {
         }
       });
 
-      this.sideHeader = $templateCache.get('modules/screens/' + $stateParams.category + '/sideheader.html');
+      this.category = $stateParams.category;
+      var org = (this.category) ? this.category : 'home';
+
+      this.sideHeader = $templateCache.get('modules/screens/sidemenu/' + org + '.html');
+
       if ($state.$current.data) {
         this.title = $state.$current.data.title;
         this.sectionTitle = $state.$current.data.sectionTitle;
