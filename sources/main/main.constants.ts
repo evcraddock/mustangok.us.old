@@ -31,7 +31,7 @@ module app {
       debug: false,
       articleDirectory: 'articles/',
       server: {
-        url: 'http://mustangok.us',
+        url: 'http://mustangnewsservice.cfapps.io',
         route: ''
       }
     }
