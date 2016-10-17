@@ -12,6 +12,8 @@ module app {
     links: Link[] = [];
     category: string;
     tag: string;
+    currentPage: number = 1;
+    itemsPerPage: number = 3;
 
     private logger: ILogger;
     private articleService: ArticleService;

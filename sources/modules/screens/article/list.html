@@ -1,4 +1,6 @@
-<div ng-repeat="article in vm.articles">
+<ul uib-pagination total-items="vm.articles.length" ng-model="vm.currentPage" items-per-page="vm.itemsPerPage" class="pagination-sm" boundary-link-numbers="true" rotate="false"></ul>
+
+<div ng-repeat="article in vm.articles.slice(((vm.currentPage-1)*vm.itemsPerPage), ((vm.currentPage)*vm.itemsPerPage))">
   <div class="media">  
     <div class="media-left">
       <a href="#{{ article.url }}">
