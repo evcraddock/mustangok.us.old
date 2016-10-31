@@ -23,7 +23,6 @@ module app {
 
       this.logger = logger.getLogger('Calendar');
       this.logger.log('init');
-      
       this.category = $stateParams.category;
       this.tag = $stateParams.tag;
       var org = (this.category) ? this.category : 'home';
@@ -41,7 +40,6 @@ module app {
     }
 
     loadData() {
-      var allarticles = [];
       var categories = [];
       var tags = [];
 

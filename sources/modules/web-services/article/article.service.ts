@@ -7,7 +7,6 @@ module app {
 		private ROUTES = {
 		  articleUri: '/articles'
 		};
-		private articleDirectory: string;
 
 		constructor(
 			logger: LoggerService,
