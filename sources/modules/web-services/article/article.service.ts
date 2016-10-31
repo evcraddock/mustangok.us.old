@@ -27,12 +27,7 @@ module app {
 			return this.queryArticles(params)
 			.then((response) => {
 				if (response) {
-					var article : Article = response[0];
-
-					if (article.content == null || article.content == "") {
-						article.content = this.loadArticleContent(article);
-					}
-					return article;
+					return response[0];
 				}
 
 				return this.$q.reject();
@@ -40,27 +35,6 @@ module app {
 			.catch(function() {
 				return this.$q.reject();
 			});
-		}
-
-		loadArticleContent(article: Article) : string {
-			var content;
-
-			if (article.content == null || article.content == "") {
-			var dataSource = this.articleDirectory + article.dataSource;
-				content = this.$templateCache.get(dataSource);
-			}
-
-			return content;
-		}
-
-		getSingleArticle(article: Article) : Article {
-			var dataSource = this.articleDirectory + article.dataSource;
-			article.content = this.$templateCache.get(dataSource);
-			return article;
-		}
-
-		setArticleLocation(directory: string) {
-			this.articleDirectory = directory;
 		}
 
 		getAllArticles(categories: string[], tags: string[]) : ng.IPromise<Article[]> {

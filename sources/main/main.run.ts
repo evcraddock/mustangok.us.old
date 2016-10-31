@@ -89,8 +89,6 @@ module app {
       // Set REST server configuration
       restService.setServer(config.environment.server);
 
-      articleService.setArticleLocation(config.environment.articleDirectory);
-
       // Cordova platform and plugins init
       $window.document.addEventListener('deviceready', () => {
 

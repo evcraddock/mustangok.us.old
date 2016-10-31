@@ -10,7 +10,6 @@ module app {
 
   export interface IApplicationEnvironment {
     debug: boolean;
-    articleDirectory: string;
     server: IServerConfig;
   }
 
@@ -20,7 +19,6 @@ module app {
   let environment = {
     local: {
       debug: true,
-      articleDirectory: 'articles/',
       // REST backend configuration, used for all web services using restService
       server: {
         url: '',
@@ -29,7 +27,6 @@ module app {
     },
     production: {
       debug: false,
-      articleDirectory: 'articles/',
       server: {
         url: 'http://mustangnewsservice.cfapps.io',
         route: ''

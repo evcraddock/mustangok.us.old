@@ -75,10 +75,6 @@ module app {
           this.articles = allarticles.slice(1);
           this.article = allarticles[0];
 
-          if (allarticles[0].content == null || allarticles[0].content == "") {
-            this.article = this.articleService.getSingleArticle(allarticles[0]);
-          }
-
           this.article.overview = this.article.content.split('\n')[0];
         }
       })
