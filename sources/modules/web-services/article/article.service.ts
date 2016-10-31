@@ -28,7 +28,10 @@ module app {
 			.then((response) => {
 				if (response) {
 					var article : Article = response[0];
-					article.content = this.loadArticleContent(article);
+
+					if (article.content == null || article.content == "") {
+						article.content = this.loadArticleContent(article);
+					}
 					return article;
 				}
 
@@ -40,8 +43,12 @@ module app {
 		}
 
 		loadArticleContent(article: Article) : string {
+			var content;
+
+			if (article.content == null || article.content == "") {
 			var dataSource = this.articleDirectory + article.dataSource;
-			var content = this.$templateCache.get(dataSource);
+				content = this.$templateCache.get(dataSource);
+			}
 
 			return content;
 		}
@@ -103,7 +110,7 @@ module app {
 	    		data.tags
     		);
 
-    		article.content = data.content;
+	    	article.content = data.content;
 
 			return article;
 	    }
