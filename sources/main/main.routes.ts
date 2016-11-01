@@ -18,13 +18,13 @@ module app {
         url: '/:category',
         templateUrl: 'modules/screens/home/home.html',
         controller: 'homeController as vm',
-        data: {title: gettext('Home')}
+        data: {title: 'Latest News in Mustang, Ok'}
       })
       .state('app.hometags', {
         url: '/:category/tags/:tag',
         templateUrl: 'modules/screens/home/home.html',
         controller: 'homeController as vm',
-        data: {title: gettext('Home')}
+        data: {title: 'Latest News in Mustang, Ok'}
       })
       .state('app.about', {
         url: '/about',

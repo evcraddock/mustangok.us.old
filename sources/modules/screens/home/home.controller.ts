@@ -10,6 +10,7 @@ module app {
     articles: Article[] = [];
     article: Article;
     links: Link[] = [];
+    currentUrl: string;
     category: string;
     tag: string;
     currentPage: number = 1;
@@ -41,7 +42,8 @@ module app {
       this.sideHeader = $templateCache.get('modules/screens/sidemenu/' + org + '.html');
       this.loadData();
 
-      if ($state.$current.data) {
+      this.currentUrl = $state.href($state.current.name)
+      if (this.title == "" && $state.$current.data) {
         this.title = $state.$current.data.title;
         this.sectionTitle = $state.$current.data.sectionTitle;
       }
@@ -64,6 +66,12 @@ module app {
       .then((links: Link[]) => {
         if (links.length > 0) {
           this.links = links;
+          for (let entry of this.links) {
+              if ("#" + entry.url == this.currentUrl) {
+                this.title = entry.title;
+                return;
+              }
+          }
         }
       });
 

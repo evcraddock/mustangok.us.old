@@ -34,6 +34,11 @@ module app {
       .then((links: Link[]) => {
         if (links.length > 0) {
           this.links = links;
+          for (let entry of links) {
+              if (entry.url == "/" + this.category) {
+                this.title = entry.title;
+              }
+          }
         }
       });
 
